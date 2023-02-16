@@ -21,9 +21,14 @@ mongoose
 		console.log('error', e)
 	})
 
-// const newUser = new user({ Name: 'Sam', Age: 23 })
+let albumSchema = new mongoose.Schema({
+	Title: String,
+	Artist: String,
+	Year: String,
+	Genre: String,
+})
 
-// newUser.save().then(() => console.log('user saved'))
+let Albums = mongoose.model('Albums', albumSchema, 'projectTechDatabase')
 
 app.set('view engine', 'ejs')
 
@@ -36,6 +41,9 @@ app.get('/preference', (req, res) => {
 })
 
 app.get('/results', (req, res) => {
+	Albums.find({}, (error, data) => {
+		console.log('data', data)
+	})
 	res.render('results')
 })
 
