@@ -1,6 +1,6 @@
 body {
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: black;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -12,7 +12,6 @@ body {
 body div {
 	font-family: Arial, Helvetica, sans-serif;
 	display: flex;
-	justify-content: center;
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
@@ -30,6 +29,10 @@ body div {
 
 body div div {
 	position: relative;
+	width: 100%;
+	display: flex;
+	justify-self: center;
+	align-items: center;
 }
 
 section {
@@ -65,7 +68,7 @@ section a {
 	display: flex;
 	justify-content: space-around;
 	list-style: none;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	margin: 0;
 	width: 100%;
@@ -87,4 +90,58 @@ section a {
 
 .navigation li img {
 	width: 20%;
+}
+
+.albumCard {
+	width: 85%;
+	background-color: rgba(251, 251, 251, 0.8);
+	margin: 1em 0;
+	border: 0.1em solid rgba(242, 242, 242, 0.8);
+	border-radius: 1.5em;
+}
+
+.albumCard h2,
+.albumCard p {
+	width: 100%;
+	text-align: left;
+}
+
+.albumCard > div p:first-of-type {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	font-weight: 700;
+	color: black;
+	opacity: 100;
+	margin-left: 1.5em;
+}
+
+.albumCard > p {
+	font-weight: thin;
+	opacity: 50%;
+	margin-top: 0;
+	margin-left: 3em;
+}
+
+.albumImage {
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+	height: 12.5em;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+}
+
+.albumCard div:nth-of-type(2) {
+	display: flex;
+	height: auto;
+	justify-content: space-between;
+	flex-direction: row;
+}
+
+.albumCard > div:nth-of-type(2) p:nth-of-type(2) {
+	opacity: 50%;
+	text-align: right;
+	margin: 0;
+	font-size: 0.65em;
+	margin-right: 1em;
 }

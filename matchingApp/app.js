@@ -13,7 +13,7 @@ app.use(expressLayouts)
 const url = `mongodb+srv://${userName}:${passWord}@Database.ymup0ov.mongodb.net/?retryWrites=true&w=majority`
 
 mongoose
-	.connect(url)
+	.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 	.then(() => {
 		console.log('connected to MongoDB')
 	})
@@ -24,11 +24,12 @@ mongoose
 let albumSchema = new mongoose.Schema({
 	Title: String,
 	Artist: String,
-	Year: String,
 	Genre: String,
+	Year: String,
+	Image: String,
 })
 
-let Albums = mongoose.model('Albums', albumSchema, 'projectTechDatabase')
+const Albums = mongoose.model('Albums', albumSchema, 'Albums')
 
 app.set('view engine', 'ejs')
 
@@ -40,11 +41,10 @@ app.get('/preference', (req, res) => {
 	res.render('preference')
 })
 
-app.get('/results', (req, res) => {
-	Albums.find({}, (error, data) => {
-		console.log('data', data)
-	})
-	res.render('results')
+app.get('/results', async (req, res) => {
+	const fetchAlbums = await Albums.find({})
+	console.log('data', fetchAlbums)
+	res.render('results', { data: fetchAlbums })
 })
 
 app.get('/profile', (req, res) => {
