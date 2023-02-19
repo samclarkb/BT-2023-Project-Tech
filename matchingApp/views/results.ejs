@@ -1,6 +1,7 @@
 <div>
 	<% if(data.length > 0){ %> <% for(let i = 0; i < data.length; i++){ %>
-	<div class="albumCard">
+	<!-- <div class="albumCard"> -->
+	<a class="albumCard" href="results<%= data[i]._id %>">
 		<div class="albumImage" style="background-image: url('<%= data[i].Image %>')"></div>
 		<div>
 			<p><%= data[i].Title %></p>
@@ -8,10 +9,7 @@
 		</div>
 
 		<p><%= data[i].Artist %></p>
-		<a href="results<%= data[i]._id %>">hier</a>
-
-		<!-- <form action="/favorites" method="POST"><Button>Add to favorite</Button></form> -->
-	</div>
+	</a>
 
 	<% } %>
 	<div class="goBack"><a href="/preference">Go Back</a></div>
