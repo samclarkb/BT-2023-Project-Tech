@@ -1,0 +1,12 @@
+<div class="detailPage">
+	<img src="<%= data[0].Image %>" alt="" />
+	<div>
+		<h1><%- data[0].Title %></h1>
+		<p><%= data[0].Genre %> | <%= data[0].Year %></p>
+	</div>
+
+	<p><%= data[0].Artist %></p>
+	<p><%= data[0].Description %></p>
+
+	<%- include('navigation') %>
+</div>

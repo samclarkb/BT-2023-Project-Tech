@@ -32,17 +32,8 @@ let albumSchema = new mongoose.Schema({
 	Genre: String,
 	Year: String,
 	Image: String,
+	Description: String,
 })
-
-let favoritesSchema = new mongoose.Schema({
-	Title: String,
-	Artist: String,
-	Genre: String,
-	Year: String,
-	Image: String,
-})
-
-const Favorites = mongoose.model('Favorites', favoritesSchema, 'Favorites')
 
 const Albums = mongoose.model('Albums', albumSchema, 'Albums')
 
@@ -58,12 +49,19 @@ app.get('/preference', (req, res) => {
 
 app.get('/results', async (req, res) => {
 	const fetchAlbums = await Albums.find({})
+	console.log(req.params.id)
 	res.render('results', { data: fetchAlbums })
+})
+
+app.get('/results:id', async (req, res) => {
+	console.log(`${req.params.id}`)
+	const fetchOneAlbum = await Albums.find({ _id: req.params.id })
+	console.log('fetchAlbums', fetchOneAlbum)
+	res.render('albumDetail', { data: fetchOneAlbum })
 })
 
 app.post('/results', async (req, res) => {
 	const fetchAlbums = await Albums.find({ Year: req.body.year, Genre: req.body.genre })
-	console.log('fetchAlbums', fetchAlbums)
 	res.render('results', { data: fetchAlbums })
 })
 

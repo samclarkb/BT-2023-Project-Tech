@@ -133,19 +133,31 @@ section a,
 	background-size: cover;
 }
 
-.albumCard div:nth-of-type(2) {
+.albumCard div:nth-of-type(2),
+.detailPage > div {
 	display: flex;
 	height: auto;
 	justify-content: space-between;
 	flex-direction: row;
 }
 
-.albumCard > div:nth-of-type(2) p:nth-of-type(2) {
+.detailPage > div h1 {
+	margin: 0;
+	margin-top: 0.25em;
+	margin-left: 0.6em;
+}
+
+.albumCard > div:nth-of-type(2) p:nth-of-type(2),
+.detailPage > div > p:last-of-type {
 	opacity: 50%;
 	text-align: right;
 	margin: 0;
 	font-size: 0.65em;
 	margin-right: 1em;
+}
+
+.detailPage > div > p:last-of-type {
+	font-size: 1em;
 }
 
 input[type='radio'] {
@@ -211,4 +223,31 @@ input[type='submit'] {
 
 .goBack {
 	padding: 1em 0 7em 0;
+}
+
+.detailPage {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	width: 100vw;
+}
+
+.detailPage img {
+	object-fit: contain;
+	width: 100%;
+}
+
+.detailPage > p:first-of-type {
+	display: block;
+	text-align: left;
+	width: 90%;
+	margin: 0;
+	margin-top: 0.5em;
+}
+
+.detailPage > p:last-of-type {
+	padding-bottom: 7.5em;
+	width: 90%;
+	opacity: 50%;
 }
