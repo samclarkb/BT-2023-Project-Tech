@@ -1,14 +1,19 @@
 const express = require('express')
 const mongoose = require('mongoose')
 require('dotenv').config()
+const bodyParser = require('body-parser')
 const userName = process.env.USERNAME
 const passWord = process.env.PASSWORD
 const app = express()
 const port = process.env.PORT
 const expressLayouts = require('express-ejs-layouts')
-// const user = require('./users.js')
 app.use(express.static(__dirname + '/public'))
 app.use(expressLayouts)
+app.use(
+	bodyParser.urlencoded({
+		extended: true,
+	})
+)
 
 const url = `mongodb+srv://${userName}:${passWord}@Database.ymup0ov.mongodb.net/?retryWrites=true&w=majority`
 
@@ -29,6 +34,16 @@ let albumSchema = new mongoose.Schema({
 	Image: String,
 })
 
+let favoritesSchema = new mongoose.Schema({
+	Title: String,
+	Artist: String,
+	Genre: String,
+	Year: String,
+	Image: String,
+})
+
+const Favorites = mongoose.model('Favorites', favoritesSchema, 'Favorites')
+
 const Albums = mongoose.model('Albums', albumSchema, 'Albums')
 
 app.set('view engine', 'ejs')
@@ -43,12 +58,23 @@ app.get('/preference', (req, res) => {
 
 app.get('/results', async (req, res) => {
 	const fetchAlbums = await Albums.find({})
-	console.log('data', fetchAlbums)
+	res.render('results', { data: fetchAlbums })
+})
+
+app.post('/results', async (req, res) => {
+	const fetchAlbums = await Albums.find({ Year: req.body.year, Genre: req.body.genre })
+	console.log('fetchAlbums', fetchAlbums)
 	res.render('results', { data: fetchAlbums })
 })
 
 app.get('/profile', (req, res) => {
 	res.render('profile')
+})
+
+app.post('/favorites', (req, res) => {
+	const favorite = req.favorite
+	console.log('favorite', favorite)
+	res.render('favorites')
 })
 
 app.get('/favorites', (req, res) => {
