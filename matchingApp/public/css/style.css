@@ -66,7 +66,8 @@ section a,
 
 .navigation {
 	background-color: white;
-	padding: 1em 0;
+	border: 0.25 solid transparent;
+	padding: 0;
 	display: flex;
 	justify-content: space-around;
 	list-style: none;
@@ -83,11 +84,13 @@ section a,
 }
 
 .navigation li a {
+	padding: 1em 0;
 	text-decoration: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: black;
+	opacity: 25%;
 }
 
 .navigation li img {
@@ -274,7 +277,7 @@ input[type='submit'] {
 
 .detailPage > a {
 	border: none;
-	background-color: rgba(250, 250, 250, 0.75);
+	background-color: rgba(250, 250, 250, 0.85);
 	color: white;
 	position: absolute;
 	left: 0;
@@ -287,12 +290,11 @@ input[type='submit'] {
 
 .detailPage > a img {
 	width: 1.25em;
-	/* transform: translateX(1em); */
 	transform: translate(-0.25em, -0.25em);
 }
 
-.active {
-	opacity: 25%;
+.navigation li > .active {
+	opacity: 100%;
 }
 
 legend h2 {
