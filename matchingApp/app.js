@@ -33,6 +33,7 @@ let albumSchema = new mongoose.Schema({
 	Year: String,
 	Image: String,
 	Description: String,
+	Like: Boolean,
 })
 
 const Albums = mongoose.model('Albums', albumSchema, 'Albums')
@@ -54,7 +55,6 @@ app.get('/results', async (req, res) => {
 })
 
 app.get('/results:id', async (req, res) => {
-	console.log(`${req.params.id}`)
 	const fetchOneAlbum = await Albums.find({ _id: req.params.id })
 	console.log('fetchAlbums', fetchOneAlbum)
 	res.render('albumDetail', { data: fetchOneAlbum })
@@ -65,14 +65,17 @@ app.post('/results', async (req, res) => {
 	res.render('results', { data: fetchAlbums })
 })
 
-app.get('/profile', (req, res) => {
-	res.render('profile')
+app.get('/favorites', async (req, res) => {
+	const fetchFavorite = await Albums.find({ Like: true })
+	console.log('favorite', fetchFavorite)
+	res.render('favorites', { data: fetchFavorite })
 })
 
-app.post('/favorites', (req, res) => {
-	const favorite = req.favorite
-	console.log('favorite', favorite)
-	res.render('favorites')
+app.put('/favorites:id', async (req, res) => {
+	const updateFavorite = await Albums.updateOne({ Like })
+	
+	console.log('id', req.params.Title)
+	res.send('hai' + req.body)
 })
 
 app.get('/favorites', (req, res) => {

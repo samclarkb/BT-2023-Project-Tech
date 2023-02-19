@@ -1,5 +1,5 @@
 body {
-	background-color: white;
+	background-color: rgba(247, 247, 247, 0.75);
 	color: black;
 	display: flex;
 	justify-content: center;
@@ -25,6 +25,9 @@ body div {
 	background-image: url(../images/wallpaper.jpeg);
 	background-size: cover;
 	background-repeat: no-repeat;
+}
+
+section h1 {
 	color: white;
 }
 
@@ -56,18 +59,14 @@ section a,
 	border: none;
 	color: white;
 	font-size: 1em;
-	background-color: purple;
-	box-shadow: 0.25em 0.25em rgba(250, 250, 250, 0.15);
+	background-color: rgba(161, 44, 167, 0.75);
 	padding: 1em 0;
 	border-radius: 5em;
 }
 
 .navigation {
-	background-color: rgba(251, 251, 251, 1);
-	border: 0.1em solid rgba(242, 242, 242, 1);
-	padding: 1.5em 0;
-	border-top-left-radius: 1.5em;
-	border-top-right-radius: 1.5em;
+	background-color: white;
+	padding: 1em 0;
 	display: flex;
 	justify-content: space-around;
 	list-style: none;
@@ -92,12 +91,12 @@ section a,
 }
 
 .navigation li img {
-	width: 15%;
+	width: 12.5%;
 }
 
 .albumCard {
 	width: 85%;
-	background-color: rgba(251, 251, 251, 0.8);
+	background-color: white;
 	margin: 0.5em 0;
 	border: 0.1em solid rgba(242, 242, 242, 0.8);
 	border-radius: 1.5em;
@@ -149,7 +148,7 @@ section a,
 }
 
 .detailPage > div h1 {
-	max-width: 75%;
+	max-width: 70%;
 	text-align: left;
 	margin: 0;
 	margin-left: 0.75em;
@@ -175,6 +174,7 @@ input[type='radio'] {
 
 fieldset {
 	display: flex;
+	flex-direction: row;
 	align-items: center;
 	justify-content: space-evenly;
 	border: none;
@@ -184,11 +184,13 @@ fieldset {
 	padding: 0;
 }
 fieldset:last-of-type {
-	margin: 2.5em 0;
+	flex-direction: column;
+	margin-top: 2em;
 }
 
 form {
-	height: 100vh;
+	/* height: 90vh; */
+	/* margin-top: 0.5em; */
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -197,28 +199,35 @@ form {
 }
 
 input[type='radio'] + label {
-	border: 0.15em solid rgba(242, 242, 242, 1);
-	opacity: 50%;
+	border: 0.15em solid rgba(161, 44, 167, 0.75);
+	margin: 0.5em 0.75em;
+	width: 75%;
+	background-color: white;
+	opacity: 25%;
 	padding: 0.5em;
 	border-radius: 0.5em;
 }
 
 input[type='radio']:checked + label {
-	border: 0.15em solid purple;
+	border: 0.15em solid rgba(161, 44, 167, 0.75);
+	background-color: rgba(161, 44, 167, 0.25);
+	color: black;
 	opacity: 100%;
 }
 
 legend {
 	margin-bottom: 0.5em;
+	width: 75%;
 }
 
 input[type='submit'] {
-	border: 0.15em solid purple;
-	background-color: purple;
+	border: 0.15em solid transparent;
+	background-color: rgba(161, 44, 167, 0.75);
 	border-radius: 5em;
 	font-size: 1.15em;
-	padding: 0.5em 1.5em;
+	padding: 0.75em 5em;
 	color: rgba(242, 242, 242, 1);
+	margin-top: 2em;
 }
 
 .noData {
@@ -231,7 +240,7 @@ input[type='submit'] {
 }
 
 .goBack {
-	padding: 1em 0 7em 0;
+	padding: 1em 0 5em 0;
 }
 
 .detailPage {
@@ -257,24 +266,36 @@ input[type='submit'] {
 }
 
 .detailPage > p:last-of-type {
-	padding-bottom: 7.5em;
+	padding-bottom: 5em;
 	width: 90%;
+	font-size: 0.9em;
 	opacity: 50%;
 }
 
 .detailPage > a {
 	border: none;
-	background-color: rgba(250, 250, 250, 0.9);
+	background-color: rgba(250, 250, 250, 0.75);
 	color: white;
 	position: absolute;
-	left: 2.5%;
-	top: 1.5%;
-	border-radius: 2em;
+	left: 0;
+	top: 0;
+	border-bottom-right-radius: 5em;
 	display: flex;
 	justify-content: center;
-	padding: 0.5em 1.5em;
+	padding: 1em;
 }
 
 .detailPage > a img {
 	width: 1.25em;
+	/* transform: translateX(1em); */
+	transform: translate(-0.25em, -0.25em);
+}
+
+.active {
+	opacity: 25%;
+}
+
+legend h2 {
+	margin-bottom: 0;
+	text-align: center;
 }
