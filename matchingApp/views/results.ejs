@@ -11,9 +11,12 @@
 		<!-- <form action="/favorites" method="POST"><Button>Add to favorite</Button></form> -->
 	</div>
 
-	<% } %> <% } else{ %>
+	<% } %>
+	<div class="goBack"><a href="/preference">Go Back</a></div>
+
+	<% } else{ %>
 	<div class="noData">
-		<p>There are no albums that matches your preferences :(</p>
+		<p>There are no albums that matches your preferences</p>
 		<a href="/preference">Go Back</a>
 	</div>
 
