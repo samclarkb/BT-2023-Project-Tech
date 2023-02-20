@@ -127,14 +127,12 @@ section a,
 .albumCard > p {
 	font-weight: thin;
 	opacity: 50%;
-	margin-top: 0;
-	margin-left: 1.5em;
+	margin: 0 0 0 1.5em;
 }
 
 .albumImage {
 	border-top-left-radius: 1em;
 	border-top-right-radius: 1em;
-
 	height: 10em;
 	width: 100%;
 	background-position: center;
@@ -319,21 +317,19 @@ legend h2 {
 	display: none;
 }
 
-.heart {
-	position: relative;
-}
-
 .heart > form > input {
 	display: none;
 }
 
-i {
-	position: absolute;
-	font-size: 1.75em !important;
-	transform: translate(4.75em, -1.65em);
-	color: rgba(215, 1, 29, 1);
+.heart > form {
+	display: flex;
+	align-items: flex-end;
+	margin-right: 2.1em;
+	transform: translatey(-1em);
 }
 
-.preference > div {
-	padding-bottom: 12.75em;
+i {
+	font-size: 2em !important;
+	color: rgba(215, 1, 29, 1);
+	margin: 0;
 }
