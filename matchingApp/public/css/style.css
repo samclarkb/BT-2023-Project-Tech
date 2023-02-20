@@ -133,6 +133,7 @@ section a,
 .albumImage {
 	border-top-left-radius: 1em;
 	border-top-right-radius: 1em;
+
 	height: 10em;
 	width: 100%;
 	background-position: center;
@@ -178,19 +179,20 @@ input[type='radio'] {
 }
 
 fieldset {
+	margin-top: 1em;
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-evenly;
 	border: none;
 	text-align: center;
 	width: 100%;
-	margin: 0;
 	padding: 0;
 }
+
 fieldset:last-of-type {
 	flex-direction: column;
-	margin-top: 2em;
 }
 
 form {
@@ -208,7 +210,12 @@ input[type='radio'] + label {
 	background-color: white;
 	opacity: 25%;
 	padding: 0.5em;
-	border-radius: 0.5em;
+	border-radius: 5em;
+}
+
+fieldset:first-of-type input[type='radio'] + label {
+	margin: 0.5em 0.75em;
+	width: 27.5%;
 }
 
 input[type='radio']:checked + label {
@@ -304,4 +311,19 @@ input[type='submit'] {
 legend h2 {
 	margin-bottom: 0;
 	text-align: center;
+}
+
+.favoriteForm input {
+	display: none;
+}
+
+.heart {
+	position: relative;
+}
+
+i {
+	position: absolute;
+	font-size: 1.75em !important;
+	transform: translate(4.75em, -1.65em);
+	color: rgba(215, 1, 29, 1);
 }

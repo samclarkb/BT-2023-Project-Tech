@@ -10,6 +10,9 @@
 
 		<p><%= data[i].Artist %></p>
 	</a>
+	<div class="heart">
+		<i onclick="toggle(this)" class="fa fa-heart-o"></i>
+	</div>
 
 	<% } %>
 	<div class="goBack"><a href="/preference">Go Back</a></div>
@@ -22,3 +25,15 @@
 
 	<% } %> <%- include('navigation') %>
 </div>
+
+<script>
+	const toggle = heart => {
+		if (heart.classList.contains('fa-heart')) {
+			heart.classList.remove('fa-heart')
+			heart.classList.add('fa-heart-o')
+		} else {
+			heart.classList.remove('fa-heart-o')
+			heart.classList.add('fa-heart')
+		}
+	}
+</script>

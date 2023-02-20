@@ -21,9 +21,12 @@
 		buttonOne.classList.add('inActive')
 	} else if (
 		window.location.href === 'http://localhost:3333/preference' ||
-		window.location.href === 'http://localhost:3333/results' ||
+		window.location.href === 'http://localhost:3333/results'
 	) {
 		buttonTwo.classList.add('inActive')
 		buttonOne.classList.add('active')
+	} else {
+		buttonTwo.classList.add('inActive')
+		buttonOne.classList.add('inActive')
 	}
 </script>
