@@ -1,15 +1,29 @@
 <div>
 	<ul class="navigation">
 		<li>
-			<a class="active" href="/preference">
+			<a id="linkOne" href="/preference">
 				<img src="../images/home.png" alt="" />
 				Home
 			</a>
 		</li>
 		<li>
-			<a href="/favorites"><img src="../images/love.png" alt="" /> Favorites</a>
+			<a id="linkTwo" href="/favorites"><img src="../images/love.png" alt="" /> Favorites</a>
 		</li>
 	</ul>
 </div>
 
-<script></script>
+<script>
+	const buttonOne = document.querySelector('#linkOne')
+	const buttonTwo = document.querySelector('#linkTwo')
+
+	if (window.location.href === 'http://localhost:3333/favorites') {
+		buttonTwo.classList.add('active')
+		buttonOne.classList.add('inActive')
+	} else if (
+		window.location.href === 'http://localhost:3333/preference' ||
+		window.location.href === 'http://localhost:3333/results' ||
+	) {
+		buttonTwo.classList.add('inActive')
+		buttonOne.classList.add('active')
+	}
+</script>

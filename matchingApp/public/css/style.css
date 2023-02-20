@@ -91,7 +91,6 @@ section a,
 	align-items: center;
 	justify-content: center;
 	color: black;
-	opacity: 25%;
 	font-size: 0.75em;
 }
 
@@ -294,8 +293,12 @@ input[type='submit'] {
 	transform: translate(-0.25em, -0.25em);
 }
 
-.navigation li > .active {
+.active {
 	opacity: 100%;
+}
+
+.inActive {
+	opacity: 25%;
 }
 
 legend h2 {
