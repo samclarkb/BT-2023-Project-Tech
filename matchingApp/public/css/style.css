@@ -221,7 +221,7 @@ fieldset:first-of-type input[type='radio'] + label {
 
 input[type='radio']:checked + label {
 	border: 0.15em solid black;
-	background-color: rgba(0, 0, 0, 0.15);
+	background-color: rgba(0, 0, 0, 0.05);
 	color: black;
 	opacity: 100%;
 }
@@ -323,9 +323,17 @@ legend h2 {
 	position: relative;
 }
 
+.heart > form > input {
+	display: none;
+}
+
 i {
 	position: absolute;
 	font-size: 1.75em !important;
 	transform: translate(4.75em, -1.65em);
 	color: rgba(215, 1, 29, 1);
+}
+
+.preference > div {
+	padding-bottom: 12.75em;
 }

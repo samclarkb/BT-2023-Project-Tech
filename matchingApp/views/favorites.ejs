@@ -1,17 +1,33 @@
-<div>
-	<% if(data.length > 0){ %> <% for(let i = 0; i < data.length; i++){ %>
-	<!-- <div class="albumCard"> -->
-	<a class="albumCard" href="results<%= data[i]._id %>">
-		<div class="albumImage" style="background-image: url('<%= data[i].Image %>')"></div>
-		<div>
-			<p><%= data[i].Title %></p>
-			<p><%= data[i].Genre %> | <%= data[i].Year %></p>
+<div class="preference">
+	<div>
+		<% if(data.length > 0){ %> <% for(let i = 0; i < data.length; i++){ %>
+		<a class="albumCard" href="results<%= data[i]._id %>">
+			<div class="albumImage" style="background-image: url('<%= data[i].Image %>')"></div>
+			<div>
+				<p><%= data[i].Title %></p>
+				<p><%= data[i].Genre %> | <%= data[i].Year %></p>
+			</div>
+
+			<p><%= data[i].Artist %></p>
+		</a>
+
+		<div class="heart">
+			<form action="favorites<%= data[i]._id %>" onSubmit="false" method="POST">
+				<label for="<%= data[i]._id %>"
+					><i onclick="toggle(this)" class="fa fa-heart-o"></i
+				></label>
+				<input
+					id="<%= data[i]._id %>"
+					name="Like"
+					type="submit"
+					value="<%= data[i]._id %>"
+				/>
+			</form>
 		</div>
 
-		<p><%= data[i].Artist %></p>
-	</a>
-
-	<% } %> <% } else{ %>
+		<% } %>
+	</div>
+	<% } else{ %>
 	<div class="noData">
 		<p>You didn't have add an album to your favorites list yet</p>
 		<a href="/preference">Search</a>
@@ -19,3 +35,15 @@
 
 	<% } %> <%- include('navigation') %>
 </div>
+
+<script>
+	const toggle = heart => {
+		if (heart.classList.contains('fa-heart')) {
+			heart.classList.remove('fa-heart')
+			heart.classList.add('fa-heart-o')
+		} else {
+			heart.classList.remove('fa-heart-o')
+			heart.classList.add('fa-heart')
+		}
+	}
+</script>

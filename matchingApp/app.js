@@ -7,6 +7,7 @@ const passWord = process.env.PASSWORD
 const app = express()
 const port = process.env.PORT
 const expressLayouts = require('express-ejs-layouts')
+const e = require('express')
 app.use(express.static(__dirname + '/public'))
 app.use(expressLayouts)
 app.use(
@@ -50,13 +51,11 @@ app.get('/preference', (req, res) => {
 
 app.get('/results', async (req, res) => {
 	const fetchAlbums = await Albums.find({})
-	console.log(req.params.id)
 	res.render('results', { data: fetchAlbums })
 })
 
 app.get('/results:id', async (req, res) => {
 	const fetchOneAlbum = await Albums.find({ _id: req.params.id })
-	console.log('fetchAlbums', fetchOneAlbum)
 	res.render('albumDetail', { data: fetchOneAlbum })
 })
 
@@ -67,19 +66,16 @@ app.post('/results', async (req, res) => {
 
 app.get('/favorites', async (req, res) => {
 	const fetchFavorite = await Albums.find({ Like: true })
-	console.log('favorite', fetchFavorite)
 	res.render('favorites', { data: fetchFavorite })
 })
 
-app.put('/favorites:id', async (req, res) => {
-	const updateFavorite = await Albums.updateOne({ Like })
-	
-	console.log('id', req.params.Title)
-	res.send('hai' + req.body)
-})
+app.post('/favorites:id', async (req, res) => {
+	console.log('id', req.body)
+	const updateFavorite = await Albums.findOneAndUpdate({ _id: req.params.id }, [
+		{ $set: { Like: { $eq: [false, '$Like'] } } },
+	])
 
-app.get('/favorites', (req, res) => {
-	res.render('favorites')
+	// res.redirect('/favorites', { data: updateFavorite })
 })
 
 app.get('*', function (req, res) {

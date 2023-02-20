@@ -10,8 +10,14 @@
 
 		<p><%= data[i].Artist %></p>
 	</a>
+
 	<div class="heart">
-		<i onclick="toggle(this)" class="fa fa-heart-o"></i>
+		<form action="favorites<%= data[i]._id %>" onSubmit="false" method="POST">
+			<label for="<%= data[i]._id %>"
+				><i onclick="toggle(this)" class="fa fa-heart-o"></i
+			></label>
+			<input id="<%= data[i]._id %>" name="Like" type="submit" value="<%= data[i]._id %>" />
+		</form>
 	</div>
 
 	<% } %>
