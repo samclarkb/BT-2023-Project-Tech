@@ -12,10 +12,14 @@
 		</a>
 
 		<div class="heart">
-			<form action="favorites<%= data[i]._id %>" onSubmit="false" method="POST">
-				<label for="<%= data[i]._id %>"
-					><i onclick="toggle(this)" class="fa fa-heart-o"></i
-				></label>
+			<form action="favorites<%= data[i]._id %>" method="POST">
+				<label for="<%= data[i]._id %>">
+					<% if(data[i].Like === true > 0){ %>
+					<i onclick="toggle(this)" class="fa fa-heart"></i>
+					<% } else{ %>
+					<i onclick="toggle(this)" class="fa fa-heart-o"></i>
+					<% } %>
+				</label>
 				<input
 					id="<%= data[i]._id %>"
 					name="Like"
