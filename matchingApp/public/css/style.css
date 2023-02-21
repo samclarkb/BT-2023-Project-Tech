@@ -4,7 +4,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	/* height: 100vh; */
 	margin: 0;
 	padding: 0;
 }
@@ -332,4 +332,8 @@ i {
 	font-size: 2em !important;
 	color: rgba(215, 1, 29, 1);
 	margin: 0;
+}
+
+.preference {
+	padding-bottom: 5em;
 }
