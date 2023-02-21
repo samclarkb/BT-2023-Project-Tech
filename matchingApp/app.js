@@ -75,7 +75,7 @@ app.post('/favorites:id', async (req, res) => {
 		{ $set: { Like: { $eq: [false, '$Like'] } } },
 	])
 
-	// res.redirect('/favorites', { data: updateFavorite })
+	// res.send('/favorites', { data: updateFavorite })
 })
 
 app.get('*', function (req, res) {
