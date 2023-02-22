@@ -1,5 +1,8 @@
 <div class="detailPage">
+	<% if( typeof data[0].Image.data != 'undefined' ){ %>
+	<img src="/images/<%=data[0].Image.data %>" alt="" /> <% } else{ %>
 	<img src="<%= data[0].Image %>" alt="" />
+	<% } %>
 	<div>
 		<h1><%- data[0].Title %></h1>
 		<p><%= data[0].Genre %> | <%= data[0].Year %></p>

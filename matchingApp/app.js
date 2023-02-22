@@ -2,10 +2,13 @@ const express = require('express')
 const mongoose = require('mongoose')
 require('dotenv').config()
 const bodyParser = require('body-parser')
+const multer = require('multer')
 const userName = process.env.USERNAME
 const passWord = process.env.PASSWORD
 const app = express()
 const port = process.env.PORT
+const path = require('path')
+const fs = require('fs')
 const expressLayouts = require('express-ejs-layouts')
 const e = require('express')
 app.use(express.static(__dirname + '/public'))
@@ -27,12 +30,27 @@ mongoose
 		console.log('error', e)
 	})
 
+const storage = multer.diskStorage({
+	destination: (req, file, cb) => {
+		cb(null, 'public/images')
+	},
+	filename: (req, file, cb) => {
+		console.log('file', file)
+		cb(null, Date.now() + '-' + file.originalname)
+	},
+})
+
+const upload = multer({ storage: storage })
+
 let albumSchema = new mongoose.Schema({
 	Title: String,
 	Artist: String,
 	Genre: String,
 	Year: String,
-	Image: String,
+	Image: {
+		data: String,
+		contentType: String,
+	},
 	Description: String,
 	Like: Boolean,
 })
@@ -78,8 +96,21 @@ app.post('/favorites:id', async (req, res) => {
 	// res.send('/favorites', { data: updateFavorite })
 })
 
-app.post('/add', function (req, res) {
-	console.log('hallo', req.body)
+app.post('/add', upload.single('File'), function (req, res) {
+	console.log('req', req.file)
+
+	Albums.insertMany([
+		{
+			Title: req.body.Title,
+			Artist: req.body.Artist,
+			Genre: req.body.Genre,
+			Year: req.body.Year,
+			Like: false,
+			Description: req.body.Description,
+			Image: { data: req.file.filename, contentType: 'image/png' },
+		},
+	]).then(() => console.log('user saved'))
+
 	res.render('add')
 })
 

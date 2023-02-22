@@ -1,19 +1,29 @@
 <div>
 	<h2>Add</h2>
-	<form action="/add" method="POST">
-		<label for="title">Title</label>
-		<input id="title" type="text" name="title" />
-		<label for="artist">Artist</label>
-		<input id="artist" type="text" name="artist" />
-		<label for="description">Description</label>
-		<textarea id="description" type="text" name="description"></textarea>
-		<label for="genre">Genre</label>
-		<input id="genre" type="text" name="genre" />
-		<label for="year">Year</label>
-		<input id="year" type="text" name="year" />
-		<label for="title">Album Cover</label>
-		<input id="title" type="image" name="image" />
-		<input type="submit" value="Add" />
+	<form action="/add" method="POST" enctype="multipart/form-data" key="File">
+		<label for="Title">Title</label>
+		<input id="Title" type="text" name="Title" required />
+		<label for="Artist">Artist</label>
+		<input id="Artist" type="text" name="Artist" required />
+		<label for="Description">Description</label>
+		<textarea id="Description" type="text" name="Description" required></textarea>
+		<label for="Genre">Genre</label>
+		<input id="Genre" type="text" name="Genre" required />
+		<label for="Year">Year</label>
+		<input id="Year" type="text" name="Year" required />
+		<label for="File">Album Cover</label>
+		<input id="File" type="File" name="File" required />
+		<input class="buttonAdd" type="submit" value="Add" />
 	</form>
 	<%- include('navigation') %>
 </div>
+<script>
+	const inputs = document.querySelectorAll(`input[type='text']`)
+	const button = document.getElementsByClassName('buttonAdd')
+
+	if (inputs.value === '') {
+		button.style.opacity = 0.25
+	} else {
+		button.style.opacity = 1
+	}
+</script>
