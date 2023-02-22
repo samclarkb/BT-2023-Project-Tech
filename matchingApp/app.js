@@ -78,6 +78,15 @@ app.post('/favorites:id', async (req, res) => {
 	// res.send('/favorites', { data: updateFavorite })
 })
 
+app.post('/add', function (req, res) {
+	console.log('hallo', req.body)
+	res.render('add')
+})
+
+app.get('/add', function (req, res) {
+	res.render('add')
+})
+
 app.get('*', function (req, res) {
 	res.status(404).send('404 page')
 })

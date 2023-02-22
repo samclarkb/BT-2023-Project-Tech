@@ -7,7 +7,15 @@
 			</a>
 		</li>
 		<li>
-			<a id="linkTwo" href="/favorites"><img src="../images/love.png" alt="" /> Favorites</a>
+			<a id="linkTwo" href="/add">
+				<img src="../images/add.png" alt="" />
+				Add
+			</a>
+		</li>
+		<li>
+			<a id="linkThree" href="/favorites"
+				><img src="../images/love.png" alt="" /> Favorites</a
+			>
 		</li>
 	</ul>
 </div>
@@ -15,18 +23,26 @@
 <script>
 	const buttonOne = document.querySelector('#linkOne')
 	const buttonTwo = document.querySelector('#linkTwo')
+	const buttonThree = document.querySelector('#linkThree')
 
 	if (window.location.href === 'http://localhost:3333/favorites') {
+		buttonTwo.classList.add('inActive')
+		buttonOne.classList.add('inActive')
+		buttonOne.classList.add('active')
+	} else if (window.location.href === 'http://localhost:3333/add') {
 		buttonTwo.classList.add('active')
 		buttonOne.classList.add('inActive')
+		buttonThree.classList.add('inActive')
 	} else if (
 		window.location.href === 'http://localhost:3333/preference' ||
 		window.location.href === 'http://localhost:3333/results'
 	) {
 		buttonTwo.classList.add('inActive')
+		buttonThree.classList.add('inActive')
 		buttonOne.classList.add('active')
 	} else {
 		buttonTwo.classList.add('inActive')
 		buttonOne.classList.add('inActive')
+		buttonThree.classList.add('inActive')
 	}
 </script>

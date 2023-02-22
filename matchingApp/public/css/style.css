@@ -96,7 +96,7 @@ section a,
 }
 
 .navigation li img {
-	width: 12.5%;
+	width: 17.5%;
 	padding-bottom: 0.25em;
 }
 
@@ -200,6 +200,7 @@ form {
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
+	height: 90vh;
 }
 
 input[type='radio'] + label {
@@ -326,6 +327,7 @@ legend h2 {
 	align-items: flex-end;
 	margin-right: 2.1em;
 	transform: translatey(-1em);
+	height: inherit;
 }
 
 i {
