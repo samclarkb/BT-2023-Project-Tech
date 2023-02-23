@@ -46,12 +46,13 @@
 	<%- include('navigation') %>
 </div>
 <script>
-	const inputs = document.querySelectorAll(`input[type='text']`)
-	const button = document.getElementsByClassName('buttonAdd')
+	const input = document.querySelector[0]('input')
+	const button = document.querySelectorAll(`input[type='submit']`)
+	console.log('', input.value)
 
-	if (inputs.value === '') {
-		button.style.opacity = 0.25
+	if (typeof input.value == 'undefined') {
+		button.style.opacity = 0.5
 	} else {
-		button.style.opacity = 1
+		button.style.opacity = 0.5
 	}
 </script>

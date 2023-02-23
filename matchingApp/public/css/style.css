@@ -70,7 +70,7 @@ section a,
 	border: 0.25 solid transparent;
 	padding: 0;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	list-style: none;
 	position: fixed;
 	bottom: 0;
@@ -96,7 +96,7 @@ section a,
 }
 
 .navigation li img {
-	width: 17.5%;
+	width: 25%;
 	padding-bottom: 0.25em;
 }
 
@@ -179,10 +179,8 @@ input[type='radio'] {
 
 input[type='file'] {
 	position: absolute;
-	bottom: 20%;
-	display: flex;
-	flex-direction: column;
-	/* display: none; */
+	font-size: 0.75em;
+	bottom: 10%;
 }
 
 input[type='file'] + label {
@@ -192,7 +190,8 @@ input[type='file'] + label {
 	align-items: center;
 	justify-content: center;
 	width: 75%;
-	border-radius: 1em;
+	border-radius: 1.5em;
+
 	background-color: white;
 }
 
@@ -398,4 +397,17 @@ i {
 
 .addForm {
 	padding-bottom: 5em;
+}
+
+.search {
+	display: flex;
+	flex-direction: row;
+}
+
+.search input[type='submit'] {
+	display: none;
+}
+
+.search img {
+	width: 1em;
 }

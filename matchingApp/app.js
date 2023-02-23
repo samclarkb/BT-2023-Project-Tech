@@ -7,8 +7,6 @@ const userName = process.env.USERNAME
 const passWord = process.env.PASSWORD
 const app = express()
 const port = process.env.PORT
-const path = require('path')
-const fs = require('fs')
 const expressLayouts = require('express-ejs-layouts')
 const e = require('express')
 app.use(express.static(__dirname + '/public'))
@@ -60,7 +58,7 @@ const Albums = mongoose.model('Albums', albumSchema, 'Albums')
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-	res.render('home')
+	res.render('preference')
 })
 
 app.get('/preference', (req, res) => {
@@ -116,6 +114,16 @@ app.post('/add', upload.single('File'), function (req, res) {
 
 app.get('/add', function (req, res) {
 	res.render('add')
+})
+
+app.get('/all', async (req, res) => {
+	const fetchAlbums = await Albums.find({})
+	res.render('all', { data: fetchAlbums })
+})
+
+app.post('/all', async (req, res) => {
+	const fetchAlbums = await Albums.find({ Title: req.body.search })
+	res.render('all', { data: fetchAlbums })
 })
 
 app.get('*', function (req, res) {
