@@ -117,12 +117,19 @@ app.get('/add', function (req, res) {
 })
 
 app.get('/all', async (req, res) => {
-	const fetchAlbums = await Albums.find({})
+	const fetchAlbums = await Albums.find({}).sort({ _id: -1 })
 	res.render('all', { data: fetchAlbums })
 })
 
 app.post('/all', async (req, res) => {
-	const fetchAlbums = await Albums.find({ Title: req.body.search })
+	const fetchAlbums = await Albums.find({
+		$or: [
+			{ Title: req.body.search },
+			{ Artist: req.body.search },
+			{ Year: req.body.search },
+			{ Genre: req.body.search },
+		],
+	})
 	res.render('all', { data: fetchAlbums })
 })
 

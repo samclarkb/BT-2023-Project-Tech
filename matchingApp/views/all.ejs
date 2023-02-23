@@ -1,6 +1,6 @@
 <div>
 	<% if(data.length > 0){ %>
-	<h2>All</h2>
+	<h2>Latest</h2>
 	<form action="/all" method="post" class="search">
 		<label for="search"></label>
 		<input type="text" id="search" name="search" placeholder="search" />
@@ -50,3 +50,15 @@
 
 	<% } %> <%- include('navigation') %>
 </div>
+
+<script>
+	const toggle = heart => {
+		if (heart.classList.contains('fa-heart')) {
+			heart.classList.remove('fa-heart')
+			heart.classList.add('fa-heart-o')
+		} else {
+			heart.classList.remove('fa-heart-o')
+			heart.classList.add('fa-heart')
+		}
+	}
+</script>
