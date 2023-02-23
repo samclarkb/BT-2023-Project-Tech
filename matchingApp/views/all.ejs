@@ -1,12 +1,15 @@
-<div>
+<div class="all">
 	<% if(data.length > 0){ %>
 	<h2>Latest</h2>
 	<form action="/all" method="post" class="search">
 		<label for="search"></label>
-		<input type="text" id="search" name="search" placeholder="search" />
-		<input type="submit" > <img src="../images/search.png" alt=""> </input>
+		<input type="text" id="search" name="search" placeholder="Search" />
+		<button type="submit"><img src="../images/search.png" alt="" /></button>
 	</form>
-	<% } else{ %> <% } %> <% if(data.length > 0){ %> <% for(let i = 0; i < data.length; i++){ %>
+	<% if(data.length < 20){ %> <a href="/all">Clear Search</a> <% } else{ %>
+	<div></div>
+	<% } %> <% } else{ %> <% } %> <% if(data.length > 0){ %> <% for(let i = 0; i < data.length;
+	i++){ %>
 
 	<a class="albumCard" id="albumcard" href="results<%= data[i]._id %>">
 		<% if( typeof data[i].Image.data != 'undefined' ){ %>
