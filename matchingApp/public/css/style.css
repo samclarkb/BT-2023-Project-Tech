@@ -432,3 +432,7 @@ i {
 	box-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.05);
 	border: solid 0.1em rgba(0, 0, 0, 0.05);
 }
+
+.delete {
+	width: 2em;
+}
