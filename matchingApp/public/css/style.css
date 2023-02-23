@@ -177,6 +177,29 @@ input[type='radio'] {
 	display: none;
 }
 
+input[type='file'] {
+	position: absolute;
+	bottom: 20%;
+	display: flex;
+	flex-direction: column;
+	/* display: none; */
+}
+
+input[type='file'] + label {
+	border: 0.15em solid black;
+	padding: 4em 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 75%;
+	border-radius: 1em;
+	background-color: white;
+}
+
+input[type='file'] + label img {
+	width: 2em;
+}
+
 fieldset {
 	margin-top: 1em;
 	display: flex;
@@ -200,7 +223,7 @@ form {
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
-	height: 90vh;
+	height: 100%;
 }
 
 input[type='radio'] + label {
@@ -337,5 +360,42 @@ i {
 }
 
 .preference {
+	padding-bottom: 5em;
+}
+
+.formText {
+	display: flex;
+	margin: 1em 0;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.formText > input[type='text'],
+.formText > textarea {
+	border: none;
+	font-size: 1.5em;
+	width: 75%;
+	border-bottom: 0.075em solid black;
+	background-color: rgba(247, 247, 247, 0.75);
+	outline: none;
+	text-align: center;
+	margin: 0;
+}
+
+.formText > textarea {
+	border: 0.1em solid black;
+	border-radius: 0.5em;
+	height: 5em;
+	margin-top: 0.25em;
+	text-align: left;
+}
+
+.formText > Label > h2 {
+	margin: 0.5em 0;
+}
+
+.addForm {
 	padding-bottom: 5em;
 }

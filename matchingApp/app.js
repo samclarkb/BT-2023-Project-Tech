@@ -97,7 +97,7 @@ app.post('/favorites:id', async (req, res) => {
 })
 
 app.post('/add', upload.single('File'), function (req, res) {
-	console.log('req', req.file)
+	console.log('req', req.body)
 
 	Albums.insertMany([
 		{
