@@ -86,7 +86,6 @@ app.get('/favorites', async (req, res) => {
 })
 
 app.post('/favorites:id', async (req, res) => {
-	console.log('id', req.body)
 	const updateFavorite = await Albums.findOneAndUpdate({ _id: req.params.id }, [
 		{ $set: { Like: { $eq: [false, '$Like'] } } },
 	])
@@ -109,7 +108,19 @@ app.post('/add', upload.single('File'), function (req, res) {
 		},
 	]).then(() => console.log('user saved'))
 
-	res.render('add')
+	res.render('succesAdd')
+})
+
+app.get('/deleteModal:id', async function (req, res) {
+	console.log('req', req.params.id)
+	const fetchAlbum = await Albums.find({ _id: req.params.id })
+	res.render('deleteModal', { data: fetchAlbum })
+})
+
+app.post('/delete:id', async function (req, res) {
+	const deleteAlbum = await Albums.find({ _id: req.params.id }).remove()
+	const fetchAlbums = await Albums.find({}).sort({ _id: -1 })
+	res.render('all', { data: fetchAlbums })
 })
 
 app.get('/add', function (req, res) {

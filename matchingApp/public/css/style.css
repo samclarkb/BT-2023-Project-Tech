@@ -9,6 +9,11 @@ body {
 	padding: 0;
 }
 
+a {
+	color: black;
+	text-decoration: none;
+}
+
 body div {
 	font-family: Arial, Helvetica, sans-serif;
 	display: flex;
@@ -58,7 +63,7 @@ section a,
 	width: 55%;
 	border: solid 0.1em rgba(0, 0, 0, 0.1);
 	color: black;
-	box-shadow: 0.25em 0.25em rgba(0, 0, 0, 0.1);
+	box-shadow: 0.15em 0.15em rgba(0, 0, 0, 0.1);
 	font-size: 1em;
 	background-color: white;
 	padding: 1em 0;
@@ -173,7 +178,8 @@ section a,
 	font-size: 1em;
 }
 
-input[type='radio'] {
+input[type='radio'],
+.deleteForm input[type='submit'] {
 	display: none;
 }
 
@@ -255,7 +261,7 @@ legend {
 input[type='submit'] {
 	border: solid 0.1em rgba(0, 0, 0, 0.1);
 	color: black;
-	box-shadow: 0.25em 0.25em rgba(0, 0, 0, 0.1);
+	box-shadow: 0.15em 0.15em rgba(0, 0, 0, 0.1);
 	border-radius: 5em;
 	font-size: 1.15em;
 	padding: 0.75em 5em;
@@ -433,6 +439,53 @@ i {
 	border: solid 0.1em rgba(0, 0, 0, 0.05);
 }
 
+.all input[type='submit'] {
+	display: none;
+}
+
+.deleteModal {
+	text-align: center;
+	height: 100vh;
+}
+
+.deleteModal h2 {
+	width: 80%;
+	margin: 2.5em 0 0 0;
+}
+
+.deleteModal form {
+	height: 65%;
+}
+
+.deleteModal form > div {
+	width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: row;
+}
+
+.deleteModal form a,
+.deleteModal form label {
+	padding: 0.5em 1.25em;
+	border: solid 0.1em rgba(0, 0, 0, 0.1);
+	color: black;
+	box-shadow: 0.15em 0.15em rgba(0, 0, 0, 0.1);
+	border-radius: 5em;
+	font-size: 1.35em;
+	background-color: white;
+	margin: 1em 0;
+}
+
+.deleteModal .albumCard > p {
+	margin: 0 0 1em 1.5em;
+}
+
+.all .albumCard {
+	margin-bottom: -2em;
+}
+
 .delete {
-	width: 2em;
+	width: 2.25em;
+	transform: translate(250%, -55%);
 }

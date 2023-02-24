@@ -26,6 +26,7 @@
 		</div>
 
 		<p><%= data[i].Artist %></p>
+
 		<div class="heart">
 			<form action="favorites<%= data[i]._id %>" method="POST">
 				<label for="<%= data[i]._id %>">
@@ -43,11 +44,14 @@
 				/>
 			</form>
 		</div>
+		<a href="/deleteModal<%= data[i]._id %>">
+			<img class="delete" src="../images/delete.png" alt=""
+		/></a>
 	</a>
 
 	<% } %> <% } else{ %>
 	<div class="noData">
-		<p>There are no albums that matches your preferences</p>
+		<p>There are no results that matches your search</p>
 		<a href="/all">Go Back</a>
 	</div>
 
