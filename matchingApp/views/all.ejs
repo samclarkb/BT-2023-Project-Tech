@@ -3,10 +3,11 @@
 	<h2>Latest</h2>
 	<form action="/all" method="post" class="search">
 		<label for="search"></label>
-		<input type="text" id="search" name="search" placeholder="Search" />
+		<input type="text" id="search" name="search" placeholder="Search" /><a class="clearSearch" href="/all"><img src="../images/clear.png" alt=""
+            /></a></input>
 		<button type="submit"><img src="../images/search.png" alt="" /></button>
 	</form>
-	<a class="clearSearch" href="/all">x</a>
+	
 
 	<% } else{ %> <% } %> <% if(data.length > 0){ %> <% for(let i = 0; i < data.length; i++){ %>
 

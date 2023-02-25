@@ -415,7 +415,7 @@ i {
 
 .search input[type='text'] {
 	padding: 0.6em 0.5em;
-	margin-left: 0.5em;
+	margin-left: 1em;
 	width: 65%;
 	border: 0.1em solid black;
 	border-radius: 0.5em;
@@ -428,20 +428,18 @@ i {
 
 .search img {
 	width: 1.75em;
+	margin-left: -0.5em;
 }
 
-.all > form + a:first-of-type {
-	width: 1em;
-	background-color: white;
-	text-decoration: none;
-	color: black;
-	border-radius: 1em;
-	box-shadow: 0.05em 0.05em rgba(0, 0, 0, 0.05);
-	border: solid 0.05em rgba(0, 0, 0, 0.05);
-	transform: translate(575%, -180%);
+.clearSearch {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transform: translateX(-150%);
+}
+
+.clearSearch img {
+	width: 1.15em;
 }
 
 .all input[type='submit'] {
@@ -498,7 +496,7 @@ i {
 div > h2 {
 	width: 100%;
 	text-align: center;
-	padding: 0.5em 0;
+	padding: 1em 0 0 0;
 	margin-top: 0;
 }
 
