@@ -1,20 +1,8 @@
 # BT-2023-Project-Tech
 
+## :bulb: Concept 
 
 ## :wrench: Features 
-
-
-<!-- ### Lazy Loading
-
-<img width='250px' src='https://github.com/samclarkb/BT-2023-Project-Tech/blob/main/matchingApp/public/gif/lazyLoad.gif'>
-
-### Delete
-
-<img width='250px' src='https://github.com/samclarkb/BT-2023-Project-Tech/blob/main/matchingApp/public/gif/delete.gif'>
-
-### Upload
-
-<img width='250px' src='https://github.com/samclarkb/BT-2023-Project-Tech/blob/main/matchingApp/public/gif/upload.gif'> -->
 
 <table>
   <tr>
@@ -28,5 +16,7 @@
     <td align="center" valign="top"><h3>Search</h3><img width='247px' src='https://github.com/samclarkb/BT-2023-Project-Tech/blob/main/matchingApp/public/gif/search.gif'></td>
   </tr>
 </table>
+
+## :mag_right: Recources 
 
 
