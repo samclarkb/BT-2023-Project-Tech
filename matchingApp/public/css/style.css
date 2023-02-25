@@ -492,10 +492,12 @@ i {
 }
 
 div > h2 {
-	background-color: rgba(0, 0, 0, 0.1);
-	color: rgba(0, 0, 0, 0.35);
 	width: 100%;
 	text-align: center;
 	padding: 0.5em 0;
 	margin-top: 0;
+}
+
+.lazy-background.fallback {
+	background-image: url('../images/fallback.png') !important;
 }

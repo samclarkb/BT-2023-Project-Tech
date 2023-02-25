@@ -14,11 +14,15 @@
 	<a class="albumCard" id="albumcard" href="results<%= data[i]._id %>">
 		<% if( typeof data[i].Image.data != 'undefined' ){ %>
 		<div
-			class="albumImage"
+			class="albumImage lazy-background fallback"
 			style="background-image: url('/images/<%= data[i].Image.data %>')"
 		></div>
+
 		<% } else{ %>
-		<div class="albumImage" style="background-image: url('<%= data[i].Image %>')"></div>
+		<div
+			class="albumImage lazy-background fallback"
+			style="background-image: url('<%= data[i].Image %>')"
+		></div>
 		<% } %>
 		<div>
 			<p><%= data[i].Title %></p>
@@ -59,16 +63,24 @@
 </div>
 
 <script>
-	// let observer = new IntersectionObserver(callback, options)
+	document.addEventListener('DOMContentLoaded', function () {
+		const lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'))
 
-	// const options = {
-	// 	root: document.querySelector('.all'),
-	// 	rootMargin: '10px',
-	// 	threshold: 0.5,
-	// }
-	// const myFirstObserver = new IntersectionObserver(elements => {
-	// 	elements.forEach(element => console.log('element', element))
-	// }, options)
+		if ('IntersectionObserver' in window) {
+			let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
+				entries.forEach(function (entry) {
+					if (entry.isIntersecting) {
+						entry.target.classList.remove('fallback')
+						lazyBackgroundObserver.unobserve(entry.target)
+					}
+				})
+			})
+
+			lazyBackgrounds.forEach(function (lazyBackground) {
+				lazyBackgroundObserver.observe(lazyBackground)
+			})
+		}
+	})
 
 	const toggle = heart => {
 		if (heart.classList.contains('fa-heart')) {
