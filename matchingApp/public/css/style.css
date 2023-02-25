@@ -431,13 +431,17 @@ i {
 }
 
 .all > form + a:first-of-type {
-	padding: 0.5em 1em;
+	width: 1em;
 	background-color: white;
 	text-decoration: none;
 	color: black;
 	border-radius: 1em;
-	box-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.05);
-	border: solid 0.1em rgba(0, 0, 0, 0.05);
+	box-shadow: 0.05em 0.05em rgba(0, 0, 0, 0.05);
+	border: solid 0.05em rgba(0, 0, 0, 0.05);
+	transform: translate(575%, -180%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .all input[type='submit'] {

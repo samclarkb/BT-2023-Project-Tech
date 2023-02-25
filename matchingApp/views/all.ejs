@@ -6,10 +6,9 @@
 		<input type="text" id="search" name="search" placeholder="Search" />
 		<button type="submit"><img src="../images/search.png" alt="" /></button>
 	</form>
-	<% if(data.length < 20){ %> <a href="/all">Clear Search</a> <% } else{ %>
-	<div></div>
-	<% } %> <% } else{ %> <% } %> <% if(data.length > 0){ %> <% for(let i = 0; i < data.length;
-	i++){ %>
+	<a class="clearSearch" href="/all">x</a>
+
+	<% } else{ %> <% } %> <% if(data.length > 0){ %> <% for(let i = 0; i < data.length; i++){ %>
 
 	<a class="albumCard" id="albumcard" href="results<%= data[i]._id %>">
 		<% if( typeof data[i].Image.data != 'undefined' ){ %>
