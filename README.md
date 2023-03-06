@@ -1,7 +1,7 @@
 # BT-2023-Project-Tech
 
 ## Table Of Contentes 
-* [:books: Assesment](https://github.com/samclarkb/BT-2023-Project-Tech#books-assessment)
+* [:books: Assesment](https://github.com/samclarkb/BT-2023-Project-Tech#books-assesment)
 * [:bulb: Concept](https://github.com/samclarkb/BT-2023-Project-Tech#bulb-concept)
 * [:star: Features](https://github.com/samclarkb/BT-2023-Project-Tech#star-features)
 * [:point_up_2: Wireflow](https://github.com/samclarkb/BT-2023-Project-Tech#point_up_2-wireflow)
@@ -33,7 +33,7 @@
 
 <img width='80%' src='https://github.com/samclarkb/BT-2023-Project-Tech/blob/main/matchingApp/public/images/wireframeMatchingApp.png'>
 
-## :wrench: Instalation 
+## :wrench: Installation 
 
 ## :mag_right: Recources 
 
