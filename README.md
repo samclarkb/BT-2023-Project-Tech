@@ -34,6 +34,17 @@
 <img width='80%' src='https://github.com/samclarkb/BT-2023-Project-Tech/blob/main/matchingApp/public/images/wireframeMatchingApp.png'>
 
 ## :wrench: Installation 
+If you want to use the app locally, you can clone my repository with the following commands:
+
+`git clone https://github.com/samclarkb/BT-2023-Project-Tech`
+
+Then install al the dependancies
+
+`npm install`
+
+After that you can run the project with the foolowing command:
+
+`npm start`
 
 ## :mag_right: Recources 
 
