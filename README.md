@@ -23,4 +23,7 @@
 
 ## :mag_right: Recources 
 
+## :bookmark: Licence 
+Copyright (c) 2021 Sam Clark Boot, [MIT](https://github.com/samclarkb/BT-2023-Project-Tech/blob/main/matchingApp/blob/main/LICENSE)
+
 
