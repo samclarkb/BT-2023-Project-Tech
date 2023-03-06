@@ -4,7 +4,6 @@
 * [:books: Assesment](https://github.com/samclarkb/BT-2023-Project-Tech#books-assesment)
 * [:bulb: Concept](https://github.com/samclarkb/BT-2023-Project-Tech#bulb-concept)
 * [:star: Features](https://github.com/samclarkb/BT-2023-Project-Tech#star-features)
-* [:point_up_2: Wireflow](https://github.com/samclarkb/BT-2023-Project-Tech#point_up_2-wireflow)
 * [:wrench: Installation](https://github.com/samclarkb/BT-2023-Project-Tech#wrench-installation)
 * [:mag_right: Recources](https://github.com/samclarkb/BT-2023-Project-Tech#mag_right-recources)
 * [:bookmark: License](https://github.com/samclarkb/BT-2023-Project-Tech#bookmark-license)
@@ -28,10 +27,6 @@
     <td align="center" valign="top"><h3>Search</h3><p>Here the user can search by ablum title, artist name, genre and year. When the user search for something that doesn't correspond with data from the database, the app will give the user feedback. The user is also able to clear the search results by pressing the cross. </p>  <img width='247px' src='https://github.com/samclarkb/BT-2023-Project-Tech/blob/main/matchingApp/public/gif/search.gif'></td>
   </tr>
 </table>
-
-## :point_up_2: Wireflow 
-
-<img width='80%' src='https://github.com/samclarkb/BT-2023-Project-Tech/blob/main/matchingApp/public/images/wireframeMatchingApp.png'>
 
 ## :wrench: Installation 
 If you want to use the app locally, you can clone my repository with the following commands:
