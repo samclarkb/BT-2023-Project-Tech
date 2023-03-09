@@ -4,8 +4,11 @@ const buttonTwo = document.querySelector('#linkTwo')
 const buttonThree = document.querySelector('#linkThree')
 const buttonFour = document.querySelector('#linkFour')
 
-// Fallback image of the albumcards 
+// Fallback image of the albumcards
 const lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'))
+
+// Favorite form/button
+const form = document.querySelectorAll('.likeForm')
 
 // Using the intersection observer to implement lazy loading
 // Resource: https://web.dev/lazy-loading-images/
@@ -67,3 +70,14 @@ if (window.location.href === 'http://localhost:3333/favorites') {
 	buttonThree.classList.add('inActive')
 	buttonFour.classList.add('inActive')
 }
+
+// fetch favorite
+form.addEventListener('submit', event => {
+	event.preventDefault()
+	const formData = new FormData(event.target)
+	fetch('http://localhost:3333/favorites:id', {
+		method: 'POST',
+		body: formData,
+	}).then(res => res.json())
+})
+

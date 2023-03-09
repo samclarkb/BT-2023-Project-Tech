@@ -1,6 +1,8 @@
 <div class="all">
+       
+
 	<% if(data.length > 0){ %>
-	<h2>Latest</h2>
+        <%- include('partials/header', {title: 'Latest'}) %>
 	<form action="/all" method="post" class="search">
 		<label for="search"></label>
 		<input type="text" id="search" name="search" placeholder="Search" /><a class="clearSearch" href="/all"><img src="../images/clear.png" alt=""
@@ -59,6 +61,6 @@
 		<a href="/all">Go Back</a>
 	</div>
 
-	<% } %> <%- include('navigation') %>
+	<% } %> <%- include('partials/navigation') %>
 </div>
 

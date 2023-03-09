@@ -1,8 +1,7 @@
 <div class="preference">
 	<div>
-		<% if(data.length > 0){ %>
-		<h2>Favorites</h2>
-		<% } else{ %> <% } %> <% if(data.length > 0){ %> <% for(let i = 0; i < data.length; i++){ %>
+		<% if(data.length > 0){ %> <%- include('partials/header', {title: 'Favorites'}) %> <% }
+		else{ %> <% } %> <% if(data.length > 0){ %> <% for(let i = 0; i < data.length; i++){ %>
 		<a class="albumCard" href="results<%= data[i]._id %>">
 			<% if( typeof data[i].Image.data != 'undefined' ){ %>
 			<div
@@ -22,7 +21,7 @@
 
 			<p><%= data[i].Artist %></p>
 			<div class="heart">
-				<form action="favorites<%= data[i]._id %>" method="POST">
+				<form class="likeForm" action="favorites<%= data[i]._id %>" method="POST">
 					<label for="<%= data[i]._id %>">
 						<% if(data[i].Like === true > 0){ %>
 						<i onclick="toggle(this)" class="fa fa-heart"></i>
@@ -48,5 +47,5 @@
 		<a href="/">Search</a>
 	</div>
 
-	<% } %> <%- include('navigation') %>
+	<% } %> <%- include('partials/navigation') %>
 </div>
