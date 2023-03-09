@@ -61,10 +61,6 @@ app.get('/', (req, res) => {
 	res.render('preference')
 })
 
-app.get('/preference', (req, res) => {
-	res.render('preference')
-})
-
 app.get('/results', async (req, res) => {
 	const fetchAlbums = await Albums.find({})
 	res.render('results', { data: fetchAlbums })

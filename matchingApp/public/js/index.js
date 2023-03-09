@@ -54,7 +54,7 @@ if (window.location.href === 'http://localhost:3333/favorites') {
 	buttonThree.classList.add('inActive')
 	buttonFour.classList.add('inActive')
 } else if (
-	window.location.href === 'http://localhost:3333/preference' ||
+	window.location.href === 'http://localhost:3333/' ||
 	window.location.href === 'http://localhost:3333/results'
 ) {
 	buttonTwo.classList.add('inActive')
