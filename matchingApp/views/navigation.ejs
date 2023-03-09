@@ -24,39 +24,3 @@
 	</ul>
 </div>
 
-<script>
-	const buttonOne = document.querySelector('#linkOne')
-	const buttonTwo = document.querySelector('#linkTwo')
-	const buttonThree = document.querySelector('#linkThree')
-	const buttonFour = document.querySelector('#linkFour')
-
-	if (window.location.href === 'http://localhost:3333/favorites') {
-		buttonTwo.classList.add('inActive')
-		buttonOne.classList.add('inActive')
-		buttonThree.classList.add('inActive')
-		buttonFour.classList.add('active')
-	} else if (window.location.href === 'http://localhost:3333/all') {
-		buttonTwo.classList.add('inActive')
-		buttonThree.classList.add('active')
-		buttonOne.classList.add('inActive')
-		buttonFour.classList.add('inActive')
-	} else if (window.location.href === 'http://localhost:3333/add') {
-		buttonTwo.classList.add('active')
-		buttonOne.classList.add('inActive')
-		buttonThree.classList.add('inActive')
-		buttonFour.classList.add('inActive')
-	} else if (
-		window.location.href === 'http://localhost:3333/preference' ||
-		window.location.href === 'http://localhost:3333/results'
-	) {
-		buttonTwo.classList.add('inActive')
-		buttonThree.classList.add('inActive')
-		buttonOne.classList.add('active')
-		buttonFour.classList.add('inActive')
-	} else {
-		buttonTwo.classList.add('inActive')
-		buttonOne.classList.add('inActive')
-		buttonThree.classList.add('inActive')
-		buttonFour.classList.add('inActive')
-	}
-</script>

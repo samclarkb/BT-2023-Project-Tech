@@ -90,7 +90,7 @@ app.post('/favorites:id', async (req, res) => {
 		{ $set: { Like: { $eq: [false, '$Like'] } } },
 	])
 
-	// res.send('/favorites', { data: updateFavorite })
+	res.redirect(`/${req.originalUrl}}`, { data: updateFavorite })
 })
 
 app.post('/add', upload.single('File'), function (req, res) {

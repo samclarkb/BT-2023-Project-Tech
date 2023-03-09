@@ -52,34 +52,3 @@
 	<% } %> <%- include('navigation') %>
 </div>
 
-<script>
-	// https://web.dev/lazy-loading-images/
-	document.addEventListener('DOMContentLoaded', function () {
-		const lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'))
-
-		if ('IntersectionObserver' in window) {
-			let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
-				entries.forEach(function (entry) {
-					if (entry.isIntersecting) {
-						entry.target.classList.remove('fallback')
-						lazyBackgroundObserver.unobserve(entry.target)
-					}
-				})
-			})
-
-			lazyBackgrounds.forEach(function (lazyBackground) {
-				lazyBackgroundObserver.observe(lazyBackground)
-			})
-		}
-	})
-
-	const toggle = heart => {
-		if (heart.classList.contains('fa-heart')) {
-			heart.classList.remove('fa-heart')
-			heart.classList.add('fa-heart-o')
-		} else {
-			heart.classList.remove('fa-heart-o')
-			heart.classList.add('fa-heart')
-		}
-	}
-</script>
