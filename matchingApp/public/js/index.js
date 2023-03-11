@@ -85,13 +85,3 @@ if (window.location.href === 'http://localhost:3333/favorites') {
 // 	})
 // })
 
-// Reload page when user gets back
-const GoBackWithRefresh = event => {
-	if ('referrer' in document) {
-		window.location = document.referrer
-		/* OR */
-		//location.replace(document.referrer);
-	} else {
-		window.history.back()
-	}
-}
