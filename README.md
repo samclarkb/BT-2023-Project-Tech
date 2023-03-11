@@ -8,7 +8,7 @@
 * [:bookmark: License](https://github.com/samclarkb/BT-2023-Project-Tech#bookmark-license)
 
 ## :bulb: Concept 
-The application enables users to find their favorite hip-hop albums. 
+The application mainly focuses on enable users to find their favorite hip-hop albums. With the help of filters and a search function the user can look up a variety of hip-hop albums. When the user finds an album he/she seems to like, the user can click on the preview for some additional information about the album. The user is also able to like, delete or upload an ablum. 
 
 ## :star: Features 
 
