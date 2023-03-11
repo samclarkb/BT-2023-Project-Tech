@@ -5,7 +5,7 @@ const expressLayouts = require('express-ejs-layouts')
 const dotenv = require('dotenv').config()
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-const Albums = require('./models/models')
+const Albums = require('../models/models')
 
 // Defining express as app
 const app = express()
@@ -32,7 +32,7 @@ mongoose
 const storage = multer.diskStorage({
 	// Giving a destination to the uploaded images
 	destination: (req, file, cb) => {
-		cb(null, 'public/images')
+		cb(null, '../../public/images')
 	},
 	// Giving a file name to the uploaded images
 	// Added the current date to make sure their will be no duplicate images name
@@ -48,7 +48,7 @@ const upload = multer({ storage: storage })
 app.set('view engine', 'ejs')
 
 // app .use
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '../../public'))
 	.use(expressLayouts)
 	.use(
 		bodyParser.urlencoded({
@@ -67,10 +67,12 @@ app.get('/', (req, res) => {
 	.get('/results:id', async (req, res) => {
 		const fetchOneAlbum = await Albums.find({ _id: req.params.id })
 		res.render('detailPageResults', { data: fetchOneAlbum })
-	}).get('/favorites:id', async (req, res) => {
+	})
+	.get('/favorites:id', async (req, res) => {
 		const fetchOneAlbum = await Albums.find({ _id: req.params.id })
 		res.render('detailPageFavorites', { data: fetchOneAlbum })
-	}).get('/all:id', async (req, res) => {
+	})
+	.get('/all:id', async (req, res) => {
 		const fetchOneAlbum = await Albums.find({ _id: req.params.id })
 		res.render('detailPageAll', { data: fetchOneAlbum })
 	})
