@@ -5,7 +5,7 @@ const expressLayouts = require('express-ejs-layouts')
 const dotenv = require('dotenv').config()
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-const Albums = require('../models/models')
+const Albums = require('./models/models')
 
 // Defining express as app
 const app = express()
@@ -48,7 +48,7 @@ const upload = multer({ storage: storage })
 app.set('view engine', 'ejs')
 
 // app .use
-app.use(express.static(__dirname + '../../public'))
+app.use(express.static(__dirname + '/public'))
 	.use(expressLayouts)
 	.use(
 		bodyParser.urlencoded({
