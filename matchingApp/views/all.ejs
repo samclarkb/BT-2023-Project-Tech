@@ -13,7 +13,7 @@
 
 	<% } else{ %> <% } %> <% if(data.length > 0){ %> <% for(let i = 0; i < data.length; i++){ %>
 
-	<a class="albumCard" id="albumcard" href="results<%= data[i]._id %>">
+	<a class="albumCard" id="albumcard" href="all<%= data[i]._id %>">
 		<% if( typeof data[i].Image.data != 'undefined' ){ %>
 		<div
 			class="albumImage lazy-background fallback"

@@ -46,7 +46,9 @@ if (window.location.href === 'http://localhost:3333/favorites') {
 	buttonOne.classList.add('inActive')
 	buttonThree.classList.add('inActive')
 	buttonFour.classList.add('active')
-} else if (window.location.href === 'http://localhost:3333/all') {
+} else if (
+	window.location.href === 'http://localhost:3333/all'
+) {
 	buttonTwo.classList.add('inActive')
 	buttonThree.classList.add('active')
 	buttonOne.classList.add('inActive')
@@ -72,12 +74,24 @@ if (window.location.href === 'http://localhost:3333/favorites') {
 }
 
 // fetch favorite
-form.addEventListener('submit', event => {
-	event.preventDefault()
-	const formData = new FormData(event.target)
-	fetch('http://localhost:3333/favorites:id', {
-		method: 'POST',
-		body: formData,
-	}).then(res => res.json())
-})
+// form.forEach(item => {
+// 	item.addEventListener('submit', event => {
+// 		event.preventDefault()
+// 		const formData = new FormData(event.target)
+// 		fetch('http://localhost:3333/favorites:id', {
+// 			method: 'POST',
+// 			body: formData,
+// 		}).then(res => res.json())
+// 	})
+// })
 
+// Reload page when user gets back
+const GoBackWithRefresh = event => {
+	if ('referrer' in document) {
+		window.location = document.referrer
+		/* OR */
+		//location.replace(document.referrer);
+	} else {
+		window.history.back()
+	}
+}

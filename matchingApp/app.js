@@ -66,7 +66,13 @@ app.get('/', (req, res) => {
 	})
 	.get('/results:id', async (req, res) => {
 		const fetchOneAlbum = await Albums.find({ _id: req.params.id })
-		res.render('albumDetail', { data: fetchOneAlbum })
+		res.render('detailPageResults', { data: fetchOneAlbum })
+	}).get('/favorites:id', async (req, res) => {
+		const fetchOneAlbum = await Albums.find({ _id: req.params.id })
+		res.render('detailPageFavorites', { data: fetchOneAlbum })
+	}).get('/all:id', async (req, res) => {
+		const fetchOneAlbum = await Albums.find({ _id: req.params.id })
+		res.render('detailPageAll', { data: fetchOneAlbum })
 	})
 	.get('/favorites', async (req, res) => {
 		const fetchFavorite = await Albums.find({ Like: true })
