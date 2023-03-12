@@ -1,17 +1,14 @@
 # BT-2023-Project-Tech
 
 ## Table Of Contentes 
-* [:books: Assesment](https://github.com/samclarkb/BT-2023-Project-Tech#books-assesment)
 * [:bulb: Concept](https://github.com/samclarkb/BT-2023-Project-Tech#bulb-concept)
 * [:star: Features](https://github.com/samclarkb/BT-2023-Project-Tech#star-features)
 * [:wrench: Installation](https://github.com/samclarkb/BT-2023-Project-Tech#wrench-installation)
 * [:mag_right: Recources](https://github.com/samclarkb/BT-2023-Project-Tech#mag_right-recources)
 * [:bookmark: License](https://github.com/samclarkb/BT-2023-Project-Tech#bookmark-license)
 
-
-## :books: Assesment
-
 ## :bulb: Concept 
+The application mainly focuses on enable users to find their favorite hip-hop albums. With the help of filters and a search function the user can look up a variety of hip-hop albums. When the user finds an album he/she seems to like, the user can click on the preview for some additional information about the album. The user is also able to like, delete or upload an ablum. 
 
 ## :star: Features 
 
@@ -42,6 +39,11 @@ After that you can run the project with the foolowing command:
 `npm start`
 
 ## :mag_right: Recources 
+* EJS -- Embedded JavaScript templates. (z.d.). https://ejs.co/
+* Lazy loading images. (2019, 16 augustus). web.dev. https://web.dev/lazy-loading-images/
+* Mongoose v7.0.1: Model. (z.d.). https://mongoosejs.com/docs/api/model.html
+* npm: multer. (z.d.). npm. https://www.npmjs.com/package/multer
+* npm: express-ejs-layouts. (z.d.). npm. https://npmjs.com/package/express-ejs-layouts
 
 ## :bookmark: License 
 Copyright (c) 2021 Sam Clark Boot, [MIT](https://github.com/samclarkb/BT-2023-Project-Tech/blob/main/LICENSE)
