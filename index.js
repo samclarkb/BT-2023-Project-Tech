@@ -93,7 +93,7 @@ app.get('/', (req, res) => {
 		res.render('all', { data: fetchAlbums })
 	})
 	.get('*', (req, res) => {
-		res.status(404).send('404 page')
+		res.status(404).render('404')
 	})
 
 // All Post requests
