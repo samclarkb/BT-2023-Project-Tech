@@ -45,6 +45,7 @@ After that you can run the project with the foolowing command:
 * npm: multer. (z.d.). npm. https://www.npmjs.com/package/multer
 * npm: express-ejs-layouts. (z.d.). npm. https://npmjs.com/package/express-ejs-layouts
 * @supports - CSS: Cascading Style Sheets | MDN. (2023, 21 februari). https://developer.mozilla.org/en-US/docs/Web/CSS/@supports
+* Intersection Observer API - Web APIs | MDN. (2023, 28 februari). https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 
 ## :bookmark: License 
 Copyright (c) 2021 Sam Clark Boot, [MIT](https://github.com/samclarkb/BT-2023-Project-Tech/blob/main/LICENSE)
