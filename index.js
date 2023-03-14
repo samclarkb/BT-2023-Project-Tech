@@ -32,7 +32,7 @@ mongoose
 const storage = multer.diskStorage({
 	// Giving a destination to the uploaded images
 	destination: (req, file, cb) => {
-		cb(null, '../../public/images')
+		cb(null, 'public/images')
 	},
 	// Giving a file name to the uploaded images
 	// Added the current date to make sure their will be no duplicate images name

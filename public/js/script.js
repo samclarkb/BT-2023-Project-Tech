@@ -46,9 +46,7 @@ if (window.location.href === 'http://localhost:3333/favorites') {
 	buttonOne.classList.add('inActive')
 	buttonThree.classList.add('inActive')
 	buttonFour.classList.add('active')
-} else if (
-	window.location.href === 'http://localhost:3333/all'
-) {
+} else if (window.location.href === 'http://localhost:3333/all') {
 	buttonTwo.classList.add('inActive')
 	buttonThree.classList.add('active')
 	buttonOne.classList.add('inActive')
@@ -84,4 +82,3 @@ if (window.location.href === 'http://localhost:3333/favorites') {
 // 		}).then(res => res.json())
 // 	})
 // })
-
